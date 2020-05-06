@@ -1,0 +1,83 @@
+body {
+  margin: 0;
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: stretch;
+
+  --button-size: 2cm;
+  --button-pad: 0.1cm;
+}
+
+.video-selector {
+  flex-grow: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-selector input[type="submit"] {
+  margin-top: 1cm;
+}
+
+.controls {
+  background-color: #111;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.controls > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.controls > div > button {
+  background-color: #222;
+  color: white;
+  border: 0;
+  width: calc(var(--button-size) - var(--button-pad) * 2);
+  height: calc(var(--button-size) - var(--button-pad) * 2);
+  margin: var(--button-pad);
+  font-size: 0.6cm;
+}
+
+.controls > div > button.icon {
+  font-size: 0.9cm;
+  color: white;
+}
+
+.player {
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+  flex-grow: 1;
+  position: relative;
+}
+
+.player__placeholder {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-aspect-ratio: 3/2) {
+  body {
+    flex-direction: column;
+  }
+
+  .controls {
+    flex-direction: row;
+  }
+
+  .controls > div {
+    flex-direction: row;
+  }
+}

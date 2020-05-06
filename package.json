@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "format": "prettier --write src/**/*",
+    "start": "http-server src",
+    "check": "tsc -p jsconfig.json"
+  },
+  "devDependencies": {
+    "http-server": "^0.12.3",
+    "prettier": "^2.0.5",
+    "typescript": "^3.8.3"
+  }
+}
