@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      let onYouTubeApiReady;
+      youTubeApiReady = new Promise((res) => {
+        onYouTubeApiReady = res;
+      });
+
+      function onYouTubeIframeAPIReady() {
+        onYouTubeApiReady();
+      }
+    </script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+
+    <title>YouTube Video Tablet Controls</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="module" src="index.js"></script>
+  </head>
+  <body>
+    <form class="video-selector">
+      <input id="video-url" type="url" placeholder="YouTube video URL" />
+      <input type="submit" />
+    </form>
+    <div class="player">
+      <div class="player__placeholder"></div>
+    </div>
+
+    <nav class="controls">
+      <div>
+        <button id="btn-skip-back" class="icon">⏪️</button>
+        <button id="btn-skip-forward" class="icon">⏩️</button>
+      </div>
+      <div>
+        <button id="btn-toggle-play" class="icon">⏯️</button>
+      </div>
+      <div>
+        <button id="btn-slower">Slow</button>
+        <button id="btn-faster">Fast</button>
+      </div>
+    </nav>
+  </body>
+</html>
